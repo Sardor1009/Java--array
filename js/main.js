@@ -1,352 +1,626 @@
 // Array 1
 
-// function getLevel2(n){
-// let res =[]
-// for (let i=1; i<= n; i++){
-//     res.push(2**i);
-// }
-// return res;
-// }
-
-// let arr = getLevel2(5)
-// console.log(arr);
-
-// Array 2
-
-// function generateSequence(n, A, B) {
-    
-//     let result = [A, B];
-    
-
-//   for (let i = 2; i < n; i++) {
-  
-//      result.push(result.reduce((a, b) => a + b, 0));
+// function getLevel2(n) {
+//   let result = [];
+//   for (let i = 1; i <= n; i++) {
+//     result.push(Math.pow(2, i));
 //   }
 //   return result;
 // }
 
-// let  output = generateSequence(5, 2, 3);
+// let n = 6;
+// let resultArray = getLevel2(n);
+// console.log(resultArray);
 
-// console.log(output);
 
+// Array 2
+// function generateSumArray(n, A, B) {
+//   let result = [A, B];
+
+//   for (let i = 2; i < n; i++) {
+//     result[i] = result.reduce((sum, num) => sum + num, 0);
+//   }
+
+//   return result;
+// }
+
+// let n = 5;
+// let A = 2;
+// let B = 3;
+// let resultArray = generateSumArray(n, A, B);
+// console.log(resultArray);
 
 // Array 3
-
-    // let arr = [4, 7, 2, 9, 1];
-        
-    // let arrReversed = arr.toReversed()
-    
-    // console.log(arr);
-    // console.log(arrReversed);
-
-    
+// function reverseArray(arr) {
+//   let reversedArray = arr.slice().reverse();
+//   return reversedArray;
 // }
 
+// // Test qismi
+// let inputArray = [1, 2, 3, 4, 5];
+// let reversedArray = reverseArray(inputArray);
+
+// console.log("Asl massiv:", inputArray);
+// console.log("Teskari tartibdagi massiv:", reversedArray);
 
 // Array 4
+// function printOddIndicesAndValues(arr) {
+//   let oddIndices = [];
+//   let oddValues = [];
 
-// function findOdds(arr) {
-//   let  odds = arr.filter(element => element % 2 !== 0);
+//   for (let i = 0; i < arr.length; i++) {
+//     if (i % 2 !== 0) {
+//       oddIndices.push(i);
+//       oddValues.push(arr[i]);
+//     }
+//   }
 
-//   let  oddsCount = odds.length;
-
-//   console.log("Massiv elementlar: " + arr);
-//   console.log("Natija: " + odds + " toqlar soni = " + oddsCount);
+//   console.log("Toqlar indekslari:", oddIndices);
+//   console.log("Toqlar sonlari:", oddValues);
 // }
 
-// let  elements = [4, 5, 7, 8, 6, 9];
-
-// findOdds(elements);
+// // Test qismi
+// let inputArray = [ 4, 5, 8, 7, 6, 9];
+// printOddIndicesAndValues(inputArray);
 
 
 // Array 5
+// function printEvenIndicesAscendingOddIndicesDescending(arr) {
+//   let evenIndices = [];
+//   let evenValues = [];
+//   let oddIndices = [];
+//   let oddValues = [];
 
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] % 2 === 0) {
+//       evenIndices.push(i);
+//       evenValues.push(arr[i]);
+//     } else {
+//       oddIndices.push(i);
+//       oddValues.push(arr[i]);
+//     }
+//   }
 
-// function findOdds(arr) {
-//   let  odds = arr.filter(element => element % 2 !== 0);
-//   let couple = arr.filter(element => element % 2 == 0);
+//   console.log("Juftlar indekslari (o'sish tartibda):", evenIndices);
+//   console.log("Juftlar sonlari (o'sish tartibda):", evenValues);
 
-//   console.log("Massiv elementlar: " + arr);
-//   console.log("Juftlari: " + couple + " Toqlari: " + odds.toReversed() );
+//   console.log("Toqlar indekslari (kamayish tartibda):", oddIndices.reverse());
+//   console.log("Toqlar sonlari (kamayish tartibda):", oddValues.reverse());
 // }
 
-// let  elements = [4, 5, 7, 8, 6, 9];
-
-// findOdds(elements);
-
+// // Test qismi
+// let inputArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// printEvenIndicesAscendingOddIndicesDescending(inputArray);
 
 
 // Array 6
-
-// function array(arr) {
+// function printEvenIndexedElements(arr) {
 //   for (let i = 0; i < arr.length; i += 2) {
 //     console.log(arr[i]);
 //   }
 // }
 
-// let myArray = [1, 4, 2, 8, 5, 6, 7];
-
-// array(myArray);
-
+// // Test qismi
+// let inputArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// printEvenIndexedElements(inputArray);
 
 // Array 7
-
-
-// function array(arr) {
-//   for (let i = arr.length-2; i >= 1; i -= 2) {
+// function printReverseOddIndexedElements(arr) {
+//   for (let i = arr.length - 1; i >= 1; i -= 2) {
 //     console.log(arr[i]);
 //   }
 // }
 
-// let myArray = [1, 4, 2, 8, 5, 6, 7];
-
-// array(myArray);
-
+// // Test qismi
+// let inputArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// printReverseOddIndexedElements(inputArray);
 
 // Array 8
+// function printEvenOddIndexedElements(arr) {
+//     for (let i = 1; i < arr.length; i += 2) {
+//       console.log(arr[i]);
+//     }
+//   for (let i = 0; i < arr.length; i += 2) {
+//     console.log(arr[i]);
+//   }
 
-// function array (arr) {
-//     for (let i=0; i<=arr.length ; i+=2){
-//         console.log(arr[i]);
-//     }
-//      for (let i=1; i<arr.length ; i+=2){
-//         console.log(arr[i]);
-//     }
 // }
 
-// let myArray = [1, 4, 2, 8, 5, 6, 7];
+// // Test qismi
+// let inputArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// printEvenOddIndexedElements(inputArray);
 
-// array(myArray);
 
 // Array 9
+// function printOddEvenIndexedElements(arr) {
+//     // Juft indekslilar kamayish tartibida chiqarish
+//     for (let i = arr.length - 2; i >= 0; i -= 2) {
+//     console.log(arr[i]);
+//     }
+//   // Toq indekslilar o'sish tartibida chiqarish
+//   for (let i = 1; i < arr.length; i += 2) {
+//     console.log(arr[i]);
+//   }
 
-// function array (arr) {
-//     for (let i=1; i<arr.length ; i+=2){
-//         console.log(arr[i]);
-//     }
-//      for (let i=arr.length-1; i>=0 ; i-=2){
-        
-//         console.log(arr[i]);
-//     }
 // }
 
-// let myArray = [1, 4, 2, 8, 5, 6, 7];
-
-// array(myArray);
-
-
+// // Test qismi
+// let inputArray = [1, 2, 3, 4, 5, 6, 7, 8];
+// printOddEvenIndexedElements(inputArray);
 
 
 // Array 10
+// function printCustomOrder(arr) {
+//   let result = [];
 
-
-// function printCustomPattern(arr) {
-//   let n = arr.length;
-
-//   for (let i = 0; i < n  ; i +=3) {
-//     console.log(arr[i]);
-//     console.log(arr[i+1]);
-//     console.log(arr[n - 1 - i]);
-//     console.log(arr[n - 2 - i]);
+//   for (let i = 0; i < Math.ceil(arr.length / 2); i++) {
+//     result.push(arr[i], arr[arr.length - 1 - i]);
 //   }
-  
+
+//   if (arr.length % 2 !== 0) {
+//     result.pop(); // O'rta elementni o'chirish
+//   }
+
+//   console.log(result);
 // }
 
-// var myArray = [1, 4, 2, 8, 5, 6, 9];
-
-// printCustomPattern(myArray);
+// // Test qismi
+// let inputArray = [1, 2, 3, 4, 5, 6, 7, 8];
+// printCustomOrder(inputArray);
 
 // Array 11
+// function rangeOutSum(arr, K, L) {
+//   let sum = 0;
 
-// let K =1;
-// let L =4;
-// let Sum =0
-
-// function rangeOutSum(arr){
-//     N = arr.length-1; 
-//     if (0 <= K && K <= L && L< N){
-//         for ( let i = 0; i<=arr.length-1; i++){
-//             Sum += arr[i]
-//         }
-//         console.log(Sum - arr[K]-arr[L]);
+//   for (let i = 0; i < arr.length; i++) {
+//     if (i < K || i > L) {
+//       sum += arr[i];
 //     }
+//   }
+
+//   return sum;
 // }
 
+// // Test qismi
+// let inputArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// let K = 2;
+// let L = 6;
 
-// rangeOutSum(myarray=[1, 2, 3, 4, 5, 6, 7, 8, 9])
-
+// let resultSum = rangeOutSum(inputArray, K, L);
+// console.log("K va L orasidagi tashqari elementlar yig'indisi:", resultSum);
 
 // Array 12
+// function separateTruthyFalsy(arr) {
+//   let truthyArray = [];
+//   let falsyArray = [];
 
-
-// function separateTruthyFalsy(arr){
-//     let truthyArray = [];
-//     let falsyArray = [];
-
-//     for (let i = 0; i< arr.length; i++){
-//         arr[i] || falsyArray.push(arr[i]);
-//         arr[i] && truthyArray.push(arr[i]);
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i]) {
+//       truthyArray.push(arr[i]);
+//     } else {
+//       falsyArray.push(arr[i]);
 //     }
+//   }
 
-//     console.log('Truthy:', truthyArray);
-//     console.log('Falsy:', falsyArray);
-
+//   return { truthyArray, falsyArray };
 // }
-
 
 // let inputArray = [10, false, "", "Abdulaziz", null];
+// let { truthyArray, falsyArray } = separateTruthyFalsy(inputArray);
 
-// separateTruthyFalsy(inputArray);
-
+// console.log("Truthy:", truthyArray);
+// console.log("Falsy:", falsyArray);
 
 // Array 13
+// function getOddMin(arr) {
+//   let minOdd = Infinity;
 
-// function getOddMin(arr){
-//     let min = arr[0];
-
-//     for (let i = 0; i<arr.length; i +=2){
-//          if (arr[i] < min) {
-//             min = arr[i];
-//         }
+//   for (let i = 0; i < arr.length; i += 2) {
+//     if (arr[i] < minOdd) {
+//       minOdd = arr[i];
 //     }
-//     return min;
+//   }
+
+//   return minOdd === Infinity ? undefined : minOdd;
 // }
 
-// let inputArray = [100, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-
-// let min = getOddMin(inputArray)
-
-// console.log(min);
+// // Test qismi
+// let inputArray = [10, 5, 3, 8, 12, 7];
+// let minOdd = getOddMin(inputArray);
+// console.log("Juft indeksli elementlar orasidan eng kichigi:", minOdd);
 
 
 // Array 14
+// function getEvenMax(arr) {
+//   let maxEven = -Infinity;
 
-// function getOddMin(arr){
-//     let max = arr[0];
-
-//     for (let i = 1; i<arr.length; i +=2){
-//          if (arr[i] > max) {
-//             max = arr[i];
-//         }
+//   for (let i = 1; i < arr.length; i += 2) {
+//     if (arr[i] > maxEven) {
+//       maxEven = arr[i];
 //     }
-//     return max;
+//   }
+
+//   return maxEven === -Infinity ? undefined : maxEven;
 // }
 
-// let inputArray = [100, 2, 3, 4, 5, 6, 7, 8, 9, 10000, 11]
-
-// let max = getOddMin(inputArray)
-
-// console.log(max);
+// // Test qismi
+// let inputArray = [10, 5, 3, 8, 12, 7];
+// let maxEven = getEvenMax(inputArray);
+// console.log("Toq indeksli elementlar orasidan eng katta:", maxEven);
 
 
 // Array 15
+// function getLastLocalMaxIndex(arr) {
+//   let lastIndex = arr.length - 1;
 
-// function getOddMin(arr){
-//     let max = arr[0];
+//   if (lastIndex < 2) {
+//     // Massivda kamida 3 element bo'lishi kerak, aks holda lokal maksimum aniqlanmaydi
+//     return undefined;
+//   }
 
-//     for (let i = 1; i<arr.length-1; i ++){
-//          if (arr[i] > max) {
-//             max = arr[i];
-//             console.log("Lokal maksimum elementi indeksi: " + i);
-//         }
+//   for (let i = lastIndex - 1; i > 0; i--) {
+//     if (arr[i] > arr[i - 1] && arr[i] > arr[i + 1]) {
+//       // Lokal maksimum topildi
+//       return i;
 //     }
+//   }
+
+//   return undefined; // Lokal maksimum topilmadi
 // }
 
-// let inputArray = [100, 2, 3, 4, 500000, 6, 7, 8, 9, 10000, 11]
-
-// let max = getOddMin(inputArray)
-
+// // Test qismi
+// let inputArray = [1, 3, 5, 2, 8, 6, 4];
+// let lastLocalMaxIndex = getLastLocalMaxIndex(inputArray);
+// console.log("Oxirgi lokal maksimum elementning indeksi:", lastLocalMaxIndex);
 
 // Array 16
-
-
-/*// function getOddMin(arr){
-//     let max = arr[0];
-//     let R = 500;   
-//     let min=[] 
-    
-//     for (let i = 0; i<arr.length; i ++){
-//         min.push(Math.abs(R-arr[i]));
-//     }
-//         // console.log(min);
-        
-//         let minnn= min[0];
-
-//         for (let el of min){
-//             if (el<minnn){
-//                 el = minnn
-//             }
-//         }console.log(minnn);
-    
-//     }
-    
-//     let inputArray = [10000, 100, 3, 4, 5, 6, 7, 8, 9, 10000, 11]
-    
-//     let max = getOddMin(inputArray)*/
-
 // function findClosestToR(arr, R) {
-//     if (arr.length === 0) {
-//         return undefined; 
+//   if (arr.length === 0) {
+//     return undefined;
+//   }
+
+//   let closestNumber = arr[0];
+//   let minDifference = Math.abs(arr[0] - R);
+
+//   for (let i = 1; i < arr.length; i++) {
+//     let currentDifference = Math.abs(arr[i] - R);
+//     if (currentDifference < minDifference) {
+//       minDifference = currentDifference;
+//       closestNumber = arr[i];
 //     }
+//   }
 
-//     let closest = arr[0]; 
-//     let minDifference = Math.abs(R - arr[0]); 
-
-//     for (let i = 1; i < arr.length; i++) {
-//         let currentDifference = Math.abs(R - arr[i]);
-
-//         if (currentDifference < minDifference) {
-//             minDifference = currentDifference;
-//             closest = arr[i];
-//         }
-//     }
-
-//     return closest;
+//   return closestNumber;
 // }
 
-// let inputArray = [3, 7, 1, 2, 6, 9, 3];
-// let R = 5;
-
-// let closestElement = findClosestToR(inputArray, R);
-
-// if (closestElement !== undefined) {
-//     console.log(`Massiv elementlari orasidan ${R} ga eng yaqin son: ${closestElement}`);
-// } else {
-//     console.log('Massiv bo\'sh.');
-// }
-
-
-
+// // Test qismi
+// let inputArray = [1, 3, 5, 8, 10];
+// let R = 7;
+// let closestNumber = findClosestToR(inputArray, R);
+// console.log("Massiv elementlari orasidan", R, "soniga eng yaqin son:", closestNumber);
 
 // Array 17
+// function findMaxPair(arr) {
+//   if (arr.length < 2) {
+//     return undefined;
+//   }
 
+//   let maxSum = arr[0] + arr[1];
+//   let maxPair = [arr[0], arr[1]];
 
-// function findMax2(arr) {
-//     if (arr.length < 2) {
-//         return undefined; 
+//   for (let i = 1; i < arr.length - 1; i++) {
+//     let currentSum = arr[i] + arr[i + 1];
+//     if (currentSum > maxSum) {
+//       maxSum = currentSum;
+//       maxPair = [arr[i], arr[i + 1]];
 //     }
+//   }
 
-//     let max1 = arr[0] + arr[1]; 
-//     let max2 = [arr[0], arr[1]]; 
-
-//     for (let i = 1; i < arr.length - 1; i++) {
-//         let currentSum = arr[i] + arr[i + 1];
-
-//         if (currentSum > max1) {
-//             max1 = currentSum;
-//             max2 = [arr[i], arr[i + 1]];
-//         }
-//     }
-
-//     return max2;
+//   return maxPair;
 // }
 
-// let inputArray = [3, 7, 1, 2, 6, 9, 3];
+// // Test qismi
+// let inputArray = [1, 3, 5, 8, 2, 4, 6];
+// let maxPair = findMaxPair(inputArray);
+// console.log("Massiv elementlari orasidan yig'indisi eng katta bo'ladigan 2 ta qo'shni element:", maxPair);
 
-// let max2 = findMax2(inputArray);
 
-// if (max2 !== undefined) {
-//     console.log(`Massivning elementlari orasidan yig'indisi eng katta bo'lgan 2 ta qo'shni: ${max2}`);
+// Array 18
+// function findDuplicateIndices(arr) {
+//   let indexMap = {};
+
+//   for (let i = 0; i < arr.length; i++) {
+//     let currentElement = arr[i];
+
+//     if (indexMap[currentElement] !== undefined) {
+//       // Bir xil qiymatga ega ikkita element topildi
+//       return [indexMap[currentElement], i];
+//     }
+
+//     indexMap[currentElement] = i;
+//   }
+
+//   // Bir xil qiymatga ega ikkita element topilmadi
+//   return undefined;
+// }
+
+// // Test qismi
+// let inputArray = [1, 3, 5, 8, 3, 4, 6];
+// let duplicateIndices = findDuplicateIndices(inputArray);
+
+// if (duplicateIndices !== undefined) {
+//   console.log("Bir xil qiymatga ega ikkita elementning indekslari:", duplicateIndices);
 // } else {
-//     console.log('Massivda kamida ikkita element bo\'lishi kerak.');
+//   console.log("Bir xil qiymatga ega ikkita element topilmadi.");
 // }
+
+
+// Array 19
+// function findMostFrequentValue(arr) {
+//   let frequencyMap = {};
+//   let mostFrequentValue;
+//   let maxFrequency = 0;
+
+//   for (let i = 0; i < arr.length; i++) {
+//     let currentElement = arr[i];
+
+//     if (frequencyMap[currentElement] === undefined) {
+//       frequencyMap[currentElement] = 1;
+//     } else {
+//       frequencyMap[currentElement]++;
+//     }
+
+//     if (frequencyMap[currentElement] > maxFrequency) {
+//       mostFrequentValue = currentElement;
+//       maxFrequency = frequencyMap[currentElement];
+//     }
+//   }
+
+//   if (maxFrequency > 1) {
+//     // Eng ko'p qatnashgan qiymat topildi
+//     let lastIndexOfMostFrequentValue = arr.lastIndexOf(mostFrequentValue);
+//     return { value: mostFrequentValue, lastIndex: lastIndexOfMostFrequentValue };
+//   }
+
+//   // Eng ko'p qatnashgan qiymat topilmadi
+//   return undefined;
+// }
+
+// // Test qismi
+// let inputArray = [1, 3, 5, 8, 3, 4, 6, 8, 8];
+// let mostFrequent = findMostFrequentValue(inputArray);
+
+// if (mostFrequent !== undefined) {
+//   console.log("Eng ko'p qatnashgan qiymat:", mostFrequent.value);
+//   console.log("Qiymatning oxirgi indeksi:", mostFrequent.lastIndex);
+// } else {
+//   console.log("Eng ko'p qatnashgan qiymat topilmadi.");
+// }
+
+// Array 20
+// function createEvenArray(a) {
+//   let b = [];
+
+//   for (let i = 0; i < a.length; i++) {
+//     if (a[i] % 2 === 0) {
+//       b.push(a[i]);
+//     }
+//   }
+
+//   return b;
+// }
+
+// // Test qismi
+// let a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// let b = createEvenArray(a);
+
+// console.log("b massivining soni:", b.length);
+// console.log("b massivining elementlari:", b);
+
+// Array 21
+// function increaseByK(a, k) {
+//   for (let i = 0; i < a.length; i++) {
+//     a[i] += k;
+//   }
+// }
+
+// // Test qismi
+// let a = [1, 2, 3, 4, 5];
+// let k = 3;
+
+// increaseByK(a, k);
+// console.log("Yangilangan a massivi:", a);
+
+// Array 22 
+// function swapHalves(arr) {
+//   if (arr.length % 2 === 0) {
+//     let halfLength = arr.length / 2;
+
+//     for (let i = 0; i < halfLength; i++) {
+//       let temp = arr[i];
+//       arr[i] = arr[i + halfLength];
+//       arr[i + halfLength] = temp;
+//     }
+//   }
+// }
+
+// // Test qismi
+// let inputArray = [1, 2, 3, 4, 5, 6];
+// swapHalves(inputArray);
+
+// console.log("Almashtirilgan massiv:", inputArray);
+
+// Array 23
+// function reverseArray(arr) {
+//   let left = 0;
+//   let right = arr.length - 1;
+
+//   while (left < right) {
+//     // Almashtirish
+//     let temp = arr[left];
+//     arr[left] = arr[right];
+//     arr[right] = temp;
+
+//     // Indeksni o'zgartirish
+//     left++;
+//     right--;
+//   }
+// }
+
+// // Test qismi
+// let inputArray = [1, 2, 3, 4, 5];
+// reverseArray(inputArray);
+
+// console.log("Teskari tartibdagi massiv:", inputArray);
+
+// Array 24
+// function zeroBetweenMinMax(arr) {
+//   if (arr.length === 0) {
+//     return;
+//   }
+
+//   let minIndex = 0;
+//   let maxIndex = 0;
+
+//   // Eng kichik va eng katta elementlarni topish
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] < arr[minIndex]) {
+//       minIndex = i;
+//     } else if (arr[i] > arr[maxIndex]) {
+//       maxIndex = i;
+//     }
+//   }
+
+//   // Eng kichik va eng katta elementlar orasidagi barcha elementlarni nolga almashtirish
+//   for (let i = minIndex + 1; i < maxIndex; i++) {
+//     arr[i] = 0;
+//   }
+// }
+
+// // Test qismi
+// let inputArray = [3, 8, 1, 6, 2, 7, 4, 5];
+// zeroBetweenMinMax(inputArray);
+
+// console.log("Massiv:", inputArray);
+
+// Array 25
+// function rotateArrayLeft(arr) {
+//   if (arr.length <= 1) {
+//     return arr; // Siklik amalga oshmadi
+//   }
+
+//   let temp = arr[0];
+
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     arr[i] = arr[i + 1];
+//   }
+
+//   arr[arr.length - 1] = temp;
+// }
+
+// // Test qismi
+// let inputArray = [1, 2, 3, 4, 5];
+// rotateArrayLeft(inputArray);
+
+// console.log("Massiv after rotation:", inputArray);
+
+// Array 26
+// function deleteElementWithIndex(arr, k) {
+//   if (k >= 0 && k < arr.length) {
+//     arr.splice(k, 1);
+//     return arr;
+//   } else {
+//     console.log("Noto'g'ri indeks kiritildi.");
+//     return arr; // Agar indeks noto'g'ri bo'lsa, massivni o'zgartirmaymiz
+//   }
+// }
+
+// // Test qismi
+// let inputArray = [1, 2, 3, 4, 5];
+// let k = 2;
+// let modifiedArray = deleteElementWithIndex(inputArray, k);
+
+// console.log("Yangi massiv:", modifiedArray);
+
+// Array 27
+// function deleteElementsInRange(arr, k, m) {
+//   if (k > 0 && m < arr.length && k < m) {
+//     arr.splice(k, m - k + 1);
+//     return arr;
+//   } else {
+//     console.log("Noto'g'ri indekslar kiritildi.");
+//     return arr; // Agar indekslar noto'g'ri bo'lsa, massivni o'zgartirmaymiz
+//   }
+// }
+
+// // Test qismi
+// let inputArray = [1, 2, 3, 4, 5, 6, 7];
+// let k = 2;
+// let m = 4;
+// let modifiedArray = deleteElementsInRange(inputArray, k, m);
+
+// console.log("Yangi massiv:", modifiedArray);
+
+// Array 28
+// function removeDuplicate(arr) {
+//   let uniqueSet = new Set(arr);
+//   let uniqueArray = Array.from(uniqueSet);
+//   return uniqueArray;
+// }
+
+// // Test qismi
+// let inputArray = [1, 2, 3, 2, 4, 5, 3, 6];
+// let resultArray = removeDuplicate(inputArray);
+
+// console.log("Yangi massiv:", resultArray);
+
+// Array 29
+// function getElementsOneTime(arr) {
+//   let seen = {};
+//   let result = [];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     let currentElement = arr[i];
+
+//     if (!seen[currentElement]) {
+//       seen[currentElement] = true;
+//     } else {
+//       // Agar element ko'rishgan bo'lsa, uni o'chiramiz
+//       delete seen[currentElement];
+//     }
+//   }
+
+//   // Yangi massivni tuzamiz
+//   for (let key in seen) {
+//     result.push(parseInt(key));
+//   }
+
+//   return result;
+// }
+
+// // Test qismi
+// let inputArray = [1, 5, 6, 1, 5, 7, 2];
+// let resultArray = getElementsOneTime(inputArray);
+
+// console.log("Yangi massiv:", resultArray);
+
+
+// Array 30
+// function searchAllElements(arr, k) {
+//   let result = [];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === k) {
+//       result.push(i);
+//     }
+//   }
+
+//   return result;
+// }
+
+// // Test qismi
+// let inputArray = [1, 3, 5, 3, 7, 3, 9];
+// let searchValue = 3;
+// let resultIndices = searchAllElements(inputArray, searchValue);
+
+// console.log(`Qiymat ${searchValue} ga teng bo'lgan elementlar indekslari:`, resultIndices);
